@@ -13,7 +13,8 @@ RUN mkdir $ESW/plugins/ik
 COPY $PWD/ik $ESW/plugins/ik
 
 # Add plugin --- kopf  && es-cloud-k8s 2.3.5
-RUN plugin install lmenezes/elasticsearch-kopf && plugin install io.fabric8/elasticsearch-cloud-kubernetes/2.3.5
+RUN plugin install lmenezes/elasticsearch-kopf 
+#&& plugin install io.fabric8/elasticsearch-cloud-kubernetes/2.3.5
 
 # Change Workdir
 WORKDIR $ESW_BIN
