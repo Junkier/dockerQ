@@ -73,6 +73,7 @@ network.host: _site_
 cloud:
   kubernetes:
     service: ${DISCOVERY_SERVICE}
+    namespace: ${NAMESPACE}
 discovery:
     type: kubernetes
 # cloud.k8s.servicedns: elasticsearch-discovery
