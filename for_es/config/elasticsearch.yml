@@ -14,13 +14,13 @@
 #
 # Use a descriptive name for your cluster:
 #
-cluster.name: Docker_Labber Jeff Build ^.<
+cluster.name: ${CLUSTER_NAME} 
 #
 # ------------------------------------ Node ------------------------------------
 #
 # Use a descriptive name for the node:
 #
-node.name: node-I_Jeff
+node.name: ${NODE_NAME}
 #
 # Add custom attributes to the node:
 #
@@ -69,6 +69,15 @@ network.host: _site_
 #
 # Prevent the "split brain" by configuring the majority of nodes (total number of nodes / 2 + 1):
 #
+# 測試，不行在移掉
+cloud:
+  kubernetes:
+    service: ${DISCOVERY_SERVICE}
+discovery:
+    type: kubernetes
+# cloud.k8s.servicedns: elasticsearch-discovery
+# discovery.type: io.fabric8.elasticsearch.discovery.k8s.K8sDiscoveryModule
+
 # discovery.zen.minimum_master_nodes: 3
 #
 # For more information, see the documentation at:

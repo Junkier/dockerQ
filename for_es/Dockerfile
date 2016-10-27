@@ -1,4 +1,4 @@
-FROM elasticsearch:2.3
+FROM elasticsearch:2.3.5
 MAINTAINER Jeff Sheng
 
 # Add ENV
@@ -10,10 +10,10 @@ COPY $PWD/config $ESW/config
 
 # Add plugin --- ik
 RUN mkdir $ESW/plugins/ik
-COPY $PWD/ik $ESW/plugins/ik
+#COPY $PWD/ik $ESW/plugins/ik
 
-# Add plugin --- kopf 
-RUN plugin install lmenezes/elasticsearch-kopf
+# Add plugin --- kopf  && es-cloud-k8s 2.3.5
+RUN plugin install lmenezes/elasticsearch-kopf && plugin install io.fabric8/elasticsearch-cloud-kubernetes/2.3.5
 
 # Change Workdir
 WORKDIR $ESW_BIN
