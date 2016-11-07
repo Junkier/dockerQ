@@ -6,7 +6,7 @@ ENV ESW /usr/share/elasticsearch
 ENV ESW_BIN $ESW/bin
 
 # Mount config
-COPY $PWD/config $ESW/config
+COPY $PWD/config/ $ESW/config
 
 # Add plugin --- ik
 RUN mkdir $ESW/plugins/ik
